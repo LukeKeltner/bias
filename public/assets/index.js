@@ -1,4 +1,5 @@
 var userId = ""
+var userZip = 0
 
 var pickId = function(id)
 {
@@ -13,5 +14,17 @@ var pickId = function(id)
 	for (var i=0; i<btns.length; i++)
 	{
 		btns[i].disabled = true
+	}
+}
+
+var getZip = function(zip)
+{
+	console.log(zip)
+	console.log(zip.toString().length)
+	if (zip.toString().length === 5)
+	{
+		userZip = zip
+		document.getElementById("zipcode").disabled = true
+		document.getElementById("zip-display").innerHTML = userZip
 	}
 }
